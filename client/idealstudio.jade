@@ -1,0 +1,11 @@
+head
+	title idealstudio
+body
+	+hello
+
+template(name="hello")
+	core-header-panel
+		core-toolbar
+			paper-tabs#tabs(selected='all', self-end)
+				paper-tab(name='all') Hello
+				paper-tab(name='favorites') World
