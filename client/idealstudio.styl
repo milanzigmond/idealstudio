@@ -4,8 +4,9 @@ darkBlue = #003664
 html,body
   height 100%
   margin 0
-  background-color #E5E5E5
+  background-color darkBlue
   font-family 'RobotoDraft', sans-serif
+
 
 #preco-idealstudio, #vzorovy-projekt, #nasa-praca
 	position: relative
@@ -49,8 +50,25 @@ html,body
 		opacity 1
 	.slick-prev:before, .slick-next:before
 		color lightBlue
+		
+#send
+	width 200px
+	border-radius 24px
+	background lightBlue
+	color darkBlue
+	margin-top 20px
 
-  
+#address
+	font-size 18px
+	padding 90px
+	line-height 28px
+	color white
+	text-align center
+
+#contact-form
+	padding-top 90px
+	color white  
+
 .bgImage
 	background-position center
 	background-size cover
@@ -104,6 +122,10 @@ paper-item::shadow
 	paper-ripple
 		color lightBlue
 
+paper-button::shadow
+	paper-ripple
+		color white
+
 #drawer
 	background white
 	
@@ -125,9 +147,40 @@ core-animated-pages
 		padding 80px
 		font-size 18px
 		line-height 28px
+
+
 #steps p
 		margin-top 40px
 		text-align center
 		padding 20px
 		font-size 24px
 		line-height 36px
+
+.custom /deep/ ::-webkit-input-placeholder
+  color lightBlue
+
+.custom /deep/ ::-moz-placeholder
+  color lightBlue
+
+.custom /deep/ :-ms-input-placeholder
+  color lightBlue
+
+.custom /deep/ .label-text,
+.custom /deep/ .error
+  color lightBlue
+
+.custom /deep/ .unfocused-underline
+  background-color lightBlue
+
+.custom[focused] /deep/ .floated-label .label-text
+  color lightBlue
+
+.custom /deep/ .focused-underline
+  background-color lightBlue
+
+.custom.invalid /deep/ .floated-label .label-text,
+.custom /deep/ .error
+  color lightBlue
+
+.custom.invalid /deep/ .focused-underline
+  background-color lightBlue

@@ -12,7 +12,9 @@ Template.app.rendered = () ->
 	pages = document.querySelector('#pages')
 	pages.addEventListener 'core-animated-pages-transition-end', (e) ->
 		page = e.target.selectedItem.attributes.label.value
-		if page in ['preco-idealstudio','nasa-praca','vzorovy-projekt']
+		if page in ['preco-idealstudio','nasa-praca','vzorovy-projekt','kontakt']
+			map = document.getElementById('map')
+			map.firstElementChild.resize()
 			console.log 'som dnu'
 			$('#'+page).slick
 				dots: true
