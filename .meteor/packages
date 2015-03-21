@@ -12,3 +12,5 @@ coffeescript
 stylus
 boxxa:polymer-elements
 meteorhacks:inject-initial
+jquery
+udondan:slick

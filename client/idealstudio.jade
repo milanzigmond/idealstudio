@@ -1,11 +1,106 @@
 head
 	title idealstudio
-body
-	+hello
 
-template(name="hello")
-	core-header-panel
-		core-toolbar
-			paper-tabs#tabs(selected='all', self-end)
-				paper-tab(name='all') Hello
-				paper-tab(name='favorites') World
+body
+	+app
+
+template(name="app")
+	core-drawer-panel(drawerWidth="300px", responsiveWidth="820px")
+		core-header-panel#drawer(drawer)
+			div(layout horizontal center center-justified)
+				img#logo(src="png/logo.png", alt="Logo")
+			core-menu(selected="0")
+				paper-item(label='preco-idealstudio') Prečo IDEALstudio?
+				paper-item(label='nasa-praca')  Naša práca
+				paper-item(label='vzorovy-projekt')  Vzorový projekt
+				paper-item(label='mam-zaujem')  Mám záujem, čo dalej?
+				paper-item(label='kontakt')  Kontakt
+		core-header-panel(main)
+			//- core-icon.menu-icon(icon='menu')
+			paper-icon-button#menu-button(icon='menu' core-drawer-toggle)
+			core-animated-pages#pages(transitions='slide-from-bottom', selected='0', valueattr='label', fit)
+				section(label='preco-idealstudio')
+					div(fit)
+						#preco-idealstudio
+							.bgImage(style="background-image:url('jpg/studio/studio1.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio2.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio3.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio4.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio5.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio6.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio7.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio8.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio9.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio10.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio11.jpg');")
+							.bgImage(style="background-image:url('jpg/studio/studio12.jpg');")
+						#wrapper
+							h1 Prečo IDEALstudio?
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ratione amet, id autem beatae cupiditate atque! Id nulla, harum ipsum tenetur in assumenda labore cum commodi, dolores, quasi aspernatur perspiciatis!
+				section(label='nasa-praca')
+					div(fit)
+						#nasa-praca
+							.bgImage(style="background-image:url('jpg/nasa-praca/canyon_wc_01.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/canyon_wc_02.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/canyon_wc_03.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/canyon_wc_05.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_01.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_02.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_03.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_07.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_11.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_hory_01.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_hory_02.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_hory_04.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_hory_08.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_pokusenie_01.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_pokusenie_02.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_pokusenie_07.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_small_cappuccino_01.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_small_cappuccino_02.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_small_cappuccino_03.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/lesna_kupelna_01.jpg');")
+							.bgImage(style="background-image:url('jpg/nasa-praca/lesna_kupelna_02.jpg');")
+				section(label='vzorovy-projekt')
+					div(fit)
+						#vzorovy-projekt
+							.bgImage(style="background-image:url('jpg/vzor/dispozicia.jpg');")
+							.bgImage(style="background-image:url('jpg/vzor/voda.jpg');")
+							.bgImage(style="background-image:url('jpg/vzor/elektrika.jpg');")
+							.bgImage(style="background-image:url('jpg/vzor/vizualizacia1.jpg');")
+							.bgImage(style="background-image:url('jpg/vzor/vizualizacia2.jpg');")
+							.bgImage(style="background-image:url('jpg/vzor/vizualizacia3.jpg');")
+				section(label='mam-zaujem')
+					div#wrapper(fit)
+						h1 Mám záujem, čo dalej?
+						paper-tabs#tabs(selected='0')
+							paper-tab 1
+							paper-tab 2
+							paper-tab 3
+							paper-tab 4
+							paper-tab 5
+							paper-tab 6
+							paper-tab 7
+							paper-tab 8
+							paper-tab 9
+						core-animated-pages#steps(transitions='slide-from-right', selected='0', valueattr='label')
+							section(label='0')
+								p Pošlem mailom alebo prinesiem osobne pôdorys (nákres) a fotky priestoru spolu s požiadavkami na vypracovanie.
+							section(label='1')
+								p Do 48 hodín dostanem na mail cenu na projekt a termín obhliadky na potvrdenie.
+							section(label='2')
+								p Na obhliadke si s dizajnérom prekonzultujem moju presdtavu o dizajne a výšku rozpočtu.
+							section(label='3')
+								p Po zaplatení 50% z ceny na projekt mi dizajnér vypracuje dispozíciu a 3D vizualizáciu, ktorú si spripomienkujeme na osobnom stretnutí.
+							section(label='4')
+								p Do vopred dohodnutého termínu dostanem vypracovaný projekt a cenovú ponuku na zariadenie kúpeľne a doplatím zvyšných 50% za projekt.
+							section(label='5')
+								p Ak s cenovou ponukou na zariadenie súhlasím, potvrdím objednávku.
+							section(label='6')
+								p Mailom alebo osobne obdržím zálohovú faktúru a po jej zaplatení objednajú moje zariadenie.
+							section(label='7')
+								p Po zalatení konečnej faktúry mi IDEAL studio dodá zariadenie a ak mám záujem zabezpečia mi autorský dozor počas celej realizácie.
+							section(label='8')
+								p Naplno si užívate svoju ideálnu kúpeľňu.
+				section(label='kontakt')
+					div#wrapper(fit)
