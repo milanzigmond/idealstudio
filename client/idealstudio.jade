@@ -1,20 +1,24 @@
 head
-	title idealstudio
+	title IDEAL studio
 
 body
+	+facebookSDK
 	+app
 
 template(name="app")
+	paper-toast#toast(text="{{toast}}")
 	core-drawer-panel(drawerWidth="300px", responsiveWidth="820px")
 		core-header-panel#drawer(drawer)
 			div(layout horizontal center center-justified)
 				img#logo(src="png/logo.png", alt="Logo")
 			core-menu(selected="0")
-				paper-item(label='preco-idealstudio') Prečo IDEALstudio?
-				paper-item(label='nasa-praca')  Naša práca
-				paper-item(label='vzorovy-projekt')  Vzorový projekt
-				paper-item(label='mam-zaujem')  Mám záujem, čo dalej?
-				paper-item(label='kontakt')  Kontakt
+				paper-item.menuItem(label='preco-idealstudio') Prečo IDEALstudio?
+				paper-item.menuItem(label='nasa-praca')  Naša práca
+				paper-item.menuItem(label='vzorovy-projekt')  Vzorový projekt
+				paper-item.menuItem(label='mam-zaujem')  Mám záujem, čo dalej?
+				paper-item.menuItem(label='kontakt') Kontakt
+			div(horizontal layout center-justified)
+				.fb-share-button(data-href='https://www.facebook.com/kupelnovestudio', data-layout='box_count')
 		core-header-panel(main)
 			//- core-icon.menu-icon(icon='menu')
 			paper-icon-button#menu-button(icon='menu' core-drawer-toggle)
@@ -45,10 +49,12 @@ template(name='precoIdealstudio')
 			.bgImage(style="background-image:url('jpg/studio/studio10.jpg');")
 			.bgImage(style="background-image:url('jpg/studio/studio11.jpg');")
 			.bgImage(style="background-image:url('jpg/studio/studio12.jpg');")
-		#wrapper
-			h1 Prečo IDEALstudio?
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ratione amet, id autem beatae cupiditate atque! Id nulla, harum ipsum tenetur in assumenda labore cum commodi, dolores, quasi aspernatur perspiciatis!
-
+		div#precoWrapper(layout horizontal)
+			#precoText(flex one)
+				p Špecializujeme sa na projektovanie kúpeľní a interiérov s následným autorským dozorom priamo na mieste realizácie. 
+				p Za celý čas našej existencie sme nakreslili presne 213 projektov a tie najlepšie si možte pozrieť na našom facebooku v albume realizácie.
+			#likeBox(flex one horizontal layout center-justified center)
+				.fb-like-box(data-href='https://www.facebook.com/kupelnovestudio', data-width='282', data-height='260', data-colorscheme='light', data-show-faces='true', data-header='false', data-stream='false', data-show-border='false')
 template(name='nasaPraca')
 	div(fit)
 		#nasa-praca
@@ -120,8 +126,7 @@ template(name='mamZaujem')
 template(name='kontakt')
 	div(fit layout vertical)
 		#map
-			google-map(latitude='48.323383', longitude='18.097540', zoom='13', fitToMarkers, style="width:100%;height:300px;")
-				google-map-marker(latitude='48.323383', longitude='18.097106', draggable='true', title='IDEALstudio')
+			
 		div(horizontal layout)
 			div#address(flex)
 				div IDEAL Studio, s.r.o. 
@@ -136,8 +141,6 @@ template(name='kontakt')
 				div Piatok: 10:00 - 18:00
 				div Sobota: 10:00 - 12:00
 			div#contact-form(flex)
-				paper-input-decorator.custom.fullname(label='Meno a priezvisko', floatinglabel)
-					input#fullname(is='core-input')
 				paper-input-decorator.custom.email(label='Email', floatinglabel)
 					input#email(is='core-input')
 				paper-input-decorator.custom.subject(label='Predmet', floatinglabel)
