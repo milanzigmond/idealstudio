@@ -15,12 +15,32 @@ showToast = (toast) ->
 	Session.set('toast', toast)
 	document.getElementById('toast').show()
 
-Template.app.rendered = () ->
-	$('#preco-idealstudio').slick
-		dots: true
-		arrows: true
-		cssEase: 'linear'
+initializeOwlCarousel = (page) ->
+	console.log 'initializeOwlCarousel with page:'+page
+	owl = $('.'+page).owlCarousel
+    loop:true
+    items:1
+    center: if page == 'preco-idealstudio' then true else false
+    lazyLoad:true
+    transitionStyle : "fade"
+    responsive:
+    	900:
+      	items: if page == 'preco-idealstudio' then 2 else 1
+  console.log owl
 
+  data = owl.data('owlCarousel')
+
+  $('.'+page+'-nav .previous').click ->
+  	data.prev()
+	$('.'+page+'-nav .next').click ->
+		data.next()
+
+Template.app.rendered = () ->
+	initializeOwlCarousel('preco-idealstudio')
+	initializeOwlCarousel('nasa-praca')
+	initializeOwlCarousel('vzorovy-projekt')
+
+	# initialize tabs
 	tabs = document.querySelector('#tabs')
 	steps = document.querySelector('#steps')
 	tabs.addEventListener 'core-select', ->
@@ -33,26 +53,19 @@ Template.app.rendered = () ->
 			showMap()
 			$('#send').on 'click', (e) ->
 				if e?
-					to = 'millanzigmond@gmail.com'
+					to = '<milanzigmond@gmail class="com"></milanzigmond@gmail>'
 					from = $('#email').val()
 					subject = $('#subject').val()
 					message = $('#message').val()
 					Meteor.call 'sendEmail', to, from, subject, message, (err) ->
 						if !err
-							showToast('Správa úspešne poslaná')
+							showToast('Správa úspešne odoslaná')
 							$('#email').val('')
 							$('#subject').val('')
 							$('#message').val('')
 						else
 							showToast(err.reason)
 							console.log err.reason
-		if page in ['preco-idealstudio','nasa-praca','vzorovy-projekt','kontakt']
-			$('#'+page).slick
-				dots: true
-				arrows: true
-				cssEase: 'linear'
-			return
-
 	$('.menuItem').on 'click', (e) ->
     if e?
 	    page = e.target.attributes.label.value
@@ -64,3 +77,11 @@ Template.app.rendered = () ->
 Template.app.helpers
 	toast: () ->
 		Session.get 'toast'
+
+Template.app.events
+	'click .owl-previous': () ->
+		console.log 'owl-previous'
+		$('.owl-carousel').trigger('owl.prev')
+	'click .owl-next': () ->
+		console.log 'owl-next'
+		$('.owl-carousel').trigger('owl.next')

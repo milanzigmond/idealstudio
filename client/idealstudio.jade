@@ -2,12 +2,12 @@ head
 	title IDEAL studio
 
 body
-	+facebookSDK
 	+app
+	+facebookSDK
 
 template(name="app")
 	paper-toast#toast(text="{{toast}}")
-	core-drawer-panel(drawerWidth="300px", responsiveWidth="820px")
+	core-drawer-panel(drawerWidth="300px", responsiveWidth="900px")
 		core-header-panel#drawer(drawer)
 			div(layout horizontal center center-justified)
 				img#logo(src="png/logo.png", alt="Logo")
@@ -20,7 +20,6 @@ template(name="app")
 			div(horizontal layout center-justified)
 				.fb-share-button(data-href='https://www.facebook.com/kupelnovestudio', data-layout='box_count')
 		core-header-panel(main)
-			//- core-icon.menu-icon(icon='menu')
 			paper-icon-button#menu-button(icon='menu' core-drawer-toggle)
 			core-animated-pages#pages(transitions='slide-from-bottom', selected='0', valueattr='label', fit)
 				section(label='preco-idealstudio')
@@ -35,21 +34,37 @@ template(name="app")
 					+kontakt
 
 template(name='precoIdealstudio')
-	div(fit)
-		#preco-idealstudio
-			.bgImage(style="background-image:url('jpg/studio/studio1.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio2.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio3.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio4.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio5.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio6.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio7.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio8.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio9.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio10.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio11.jpg');")
-			.bgImage(style="background-image:url('jpg/studio/studio12.jpg');")
-		div#precoWrapper(layout horizontal)
+	div(fit vertical layout)
+		.preco-idealstudio
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio1.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio2.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio3.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio4.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio5.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio6.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio7.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio8.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio9.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio10.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio11.jpg' alt='')
+			.item
+				img(class='owl-lazy' data-src='jpg/studio/studio12.jpg' alt='')
+		.preco-idealstudio-nav(horizontal layout)
+			paper-icon-button.previous(icon='arrow-back')
+			div(flex)
+			paper-icon-button.next(icon='arrow-forward')
+		div#precoWrapper(layout horizontal flex)
 			#precoText(flex one)
 				p Špecializujeme sa na projektovanie kúpeľní a interiérov s následným autorským dozorom priamo na mieste realizácie. 
 				p Za celý čas našej existencie sme nakreslili presne 213 projektov a tie najlepšie si možte pozrieť na našom facebooku v albume realizácie.
@@ -57,39 +72,60 @@ template(name='precoIdealstudio')
 				.fb-like-box(data-href='https://www.facebook.com/kupelnovestudio', data-width='282', data-height='260', data-colorscheme='light', data-show-faces='true', data-header='false', data-stream='false', data-show-border='false')
 template(name='nasaPraca')
 	div(fit)
-		#nasa-praca
-			.bgImage(style="background-image:url('jpg/nasa-praca/canyon_wc_01.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/canyon_wc_02.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/canyon_wc_03.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/canyon_wc_05.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_01.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_02.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_03.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_07.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_aqua_11.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_hory_01.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_hory_02.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_hory_04.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_hory_08.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_pokusenie_01.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_pokusenie_02.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_pokusenie_07.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_small_cappuccino_01.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_small_cappuccino_02.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/kupelna_small_cappuccino_03.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/lesna_kupelna_01.jpg');")
-			.bgImage(style="background-image:url('jpg/nasa-praca/lesna_kupelna_02.jpg');")
-
+		.nasa-praca
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_hory_01.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_hory_02.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_hory_03.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/canyon_wc_01.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/canyon_wc_02.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/canyon_wc_03.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_aqua_01.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_aqua_02.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_aqua_03.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_pokusenie_01.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_pokusenie_02.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_pokusenie_03.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/kupelna_small_cappuccino_01.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/lesna_kupelna_01.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/nasa-praca/lesna_kupelna_02.jpg')
+		.nasa-praca-nav(horizontal layout)
+			paper-icon-button.previous(icon='arrow-back')
+			div(flex)
+			paper-icon-button.next(icon='arrow-forward')
 template(name='vzorovyProjekt')
 	div(fit)
-		#vzorovy-projekt
-			.bgImage(style="background-image:url('jpg/vzor/dispozicia.jpg');")
-			.bgImage(style="background-image:url('jpg/vzor/voda.jpg');")
-			.bgImage(style="background-image:url('jpg/vzor/elektrika.jpg');")
-			.bgImage(style="background-image:url('jpg/vzor/vizualizacia1.jpg');")
-			.bgImage(style="background-image:url('jpg/vzor/vizualizacia2.jpg');")
-			.bgImage(style="background-image:url('jpg/vzor/vizualizacia3.jpg');")
-
+		.vzorovy-projekt
+			.item
+				img(class='owl-lazy' data-src='jpg/vzor/dispozicia.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/vzor/voda.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/vzor/elektrika.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/vzor/vizualizacia1.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/vzor/vizualizacia2.jpg')
+			.item
+				img(class='owl-lazy' data-src='jpg/vzor/vizualizacia3.jpg')
+		.vzorovy-projekt-nav(horizontal layout)
+			paper-icon-button.previous(icon='arrow-back')
+			div(flex)
+			paper-icon-button.next(icon='arrow-forward')
 template(name='mamZaujem')
 	div#wrapper(fit)
 		h1 Mám záujem, čo dalej?

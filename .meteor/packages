@@ -13,7 +13,6 @@ stylus
 boxxa:polymer-elements
 meteorhacks:inject-initial
 jquery
-udondan:slick
 email
 spiderable
-meteorhacks:fast-render
+richsilv:owl-carousel
